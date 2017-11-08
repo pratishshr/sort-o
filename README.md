@@ -1,7 +1,7 @@
 # sort-o 
-[![npm](https://img.shields.io/npm/v/sort-o.svg)](https://www.npmjs.com/package/chai-exclude)
+[![npm](https://img.shields.io/npm/v/sort-o.svg)](https://www.npmjs.com/package/sort-o)
 [![Build Status](https://travis-ci.org/pratishshr/sort-o.svg?branch=master)](https://travis-ci.org/pratishshr/sort-o) 
-[![npm](https://img.shields.io/npm/dt/sort-o.svg)](https://www.npmjs.com/package/chai-exclude)
+[![npm](https://img.shields.io/npm/dt/sort-o.svg)](https://www.npmjs.com/package/sort-o)
 > Utility for your sorting needs.
 
 
