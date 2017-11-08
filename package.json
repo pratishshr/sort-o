@@ -11,11 +11,11 @@
     "test": "mocha --require babel-register",
     "test:watch": "mocha --require babel-register --watch"
   },
-  "keywords": [
-    "object-sort",
-    "sort",
-    "sort-keys"
-  ],
+  "keywords": ["object-sort", "sort", "sort-keys"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pratishshr/sort-o"
+  },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
