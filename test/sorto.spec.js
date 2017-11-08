@@ -4,7 +4,7 @@ import { isObject } from '../src/utils/object';
 import { sort, SORT_ASC, SORT_DESC, SORT_LENGTH, SORT_LENGTH_REVERSE } from '../src/sorto';
 
 /**
- * Traverse the object tree to get the concatenated keys.
+ * Traverse object to get the concatenated keys.
  * 
  * @example
  * getDeepKeys({a: {a: 1}, b: 2}) => ['a.a', 'b']
