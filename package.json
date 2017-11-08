@@ -2,7 +2,7 @@
   "name": "sort-o",
   "version": "1.0.0",
   "description": "Sort Object Keys",
-  "main": "dist/sorto.js",
+  "main": "build/sorto.js",
   "module": "src/index.js",
   "author": "pratishshr@gmail.com",
   "license": "MIT",
