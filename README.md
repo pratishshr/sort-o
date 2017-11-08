@@ -1,6 +1,7 @@
 # sort-o
 > Utility for your sorting needs.
 
+## Features
 - Sort keys of an object.
 - Sort arrays by length and value.
 - TBD..
@@ -47,7 +48,7 @@ Sort data as per the specified order.
 | **SORT_LENGTH** | `string` | 'length' | Sort in ascending order by length |
 | **SORT_LENGTH_REVERSE** | `string` | 'length_reverse' | Sort in descending order by length |
 
-## EXAMPLE
+## Example
 
 #### Sort keys of an object
 ```js
