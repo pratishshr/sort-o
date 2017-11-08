@@ -1,10 +1,7 @@
 import { isObject } from './utils/object';
 import { ascendingSort, descendingSort, lengthSort, lengthReverseSort } from './utils/comparators';
 
-export const SORT_ASC = 'asc';
-export const SORT_DESC = 'desc';
-export const SORT_LENGTH = 'length';
-export const SORT_LENGTH_REVERSE = 'length_reverse';
+import { ASC, DESC, LENGTH, LENGTH_REVERSE } from './constants/sortType';
 
 /**
  * Returns appropriate comparator as per the sort string.
@@ -19,10 +16,10 @@ function getComparator(sortOrder) {
   }
 
   const comparators = {
-    [SORT_ASC]: ascendingSort,
-    [SORT_DESC]: descendingSort,
-    [SORT_LENGTH]: lengthSort,
-    [SORT_LENGTH_REVERSE]: lengthReverseSort
+    [ASC]: ascendingSort,
+    [DESC]: descendingSort,
+    [LENGTH]: lengthSort,
+    [LENGTH_REVERSE]: lengthReverseSort
   };
 
   return comparators[sortOrder];
@@ -67,7 +64,7 @@ function sortArray(data, comparator) {
  * @param {Object|Array} data 
  * @param {String|Function} = 'asc' sortOrder 
  */
-export function sort(data, sortOrder = SORT_ASC) {
+export function sort(data, sortOrder = ASC) {
   const comparator = getComparator(sortOrder);
 
   if (isObject(data)) {

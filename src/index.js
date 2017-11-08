@@ -1,3 +1,4 @@
 import { sort } from './sorto';
+import * as sortType from './constants/sortType';
 
-export { sort };
+export { sort, sortType };
