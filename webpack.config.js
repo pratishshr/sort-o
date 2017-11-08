@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'sort-o.js',
+    filename: 'sorto.js',
     library: 'sort-o'
   }
 };
