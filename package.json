@@ -1,0 +1,22 @@
+{
+  "name": "sorto",
+  "version": "1.0.0",
+  "description": "Sort Object Keys",
+  "main": "dist/sorto.js",
+  "module": "src/index.js",
+  "author": "pratishshr@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "test": "mocha --require babel-register",
+    "test:watch": "mocha --require babel-register --watch"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "webpack": "^3.8.1"
+  }
+}
