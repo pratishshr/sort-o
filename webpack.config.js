@@ -5,6 +5,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'sorto.js',
-    library: 'sort-o'
+    library: 'sorto'
   }
 };

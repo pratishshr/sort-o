@@ -1,4 +1,4 @@
-var sort-o =
+var sorto =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
