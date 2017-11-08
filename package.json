@@ -1,6 +1,6 @@
 {
-  "name": "sorto",
-  "version": "1.0.0",
+  "name": "sort-o",
+  "version": "0.0.1",
   "description": "Sort Object Keys",
   "main": "dist/sorto.js",
   "module": "src/index.js",
