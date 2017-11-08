@@ -1,6 +1,9 @@
 # sort-o
+> Utility for your sorting needs.
 
-Sort keys of an object.
+- Sort keys of an object.
+- Sort arrays by length and value.
+- TBD..
 
 ## Installation
 
@@ -32,7 +35,7 @@ yarn add sort-o
 
 ## API
 
-#### sorto.sort(data[, SORT_ORDER])
+#### sorto.sort(data [, SORT_ORDER])
 Sort data as per the specified order.
  - Suppports deep sorting for object keys.
 
@@ -42,7 +45,7 @@ Sort data as per the specified order.
 | **SORT_ASC** `(default)` | `string` | 'asc' | Sort in ascending order |
 | **SORT_DESC** | `string` | 'desc' | Sort in descending order |
 | **SORT_LENGTH** | `string` | 'length' | Sort in ascending order by length |
-| **SORT_LENGTH_REVERSE** | `string` | 'asc' | Sort in descending order by length |
+| **SORT_LENGTH_REVERSE** | `string` | 'length_reverse' | Sort in descending order by length |
 
 ## EXAMPLE
 
