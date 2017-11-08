@@ -1,5 +1,7 @@
-# sort-o [![Build Status](https://travis-ci.org/pratishshr/sort-o.svg?branch=master)](https://travis-ci.org/pratishshr/sort-o)
-
+# sort-o 
+[![npm](https://img.shields.io/npm/v/sort-o.svg)](https://www.npmjs.com/package/chai-exclude)
+[![Build Status](https://travis-ci.org/pratishshr/sort-o.svg?branch=master)](https://travis-ci.org/pratishshr/sort-o) 
+[![npm](https://img.shields.io/npm/dt/sort-o.svg)](https://www.npmjs.com/package/chai-exclude)
 > Utility for your sorting needs.
 
 
@@ -53,7 +55,7 @@ Sort data as per the specified order.
 
 ## Example
 
-#### Sort keys of an object
+#### Sort keys of an object.
 ```js
   import { sort, sortOrder } from 'sort-o';
 
@@ -80,7 +82,7 @@ Sort data as per the specified order.
   //    }
 ```
 
-#### Sort array of string
+#### Sort array of strings.
 ```js
   import {sort, sortOrder} from 'sort-o';
 
