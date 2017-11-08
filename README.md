@@ -1,5 +1,8 @@
-# sort-o
+# sort-o [![Build Status](https://travis-ci.org/pratishshr/sort-o.svg?branch=master)](https://travis-ci.org/pratishshr/sort-o)
+
 > Utility for your sorting needs.
+
+
 
 ## Features
 - Sort keys of an object.
