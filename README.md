@@ -32,30 +32,30 @@ yarn add sort-o
 #### ES6 Import
 
 ```js
-  import { sort, SORT_ASC } from 'sort-o';
+  import { sort, sortOrder } from 'sort-o';
 
-  sort(data, SORT_ASC);
+  sort(data, sortOrder.ASC);
 ```
 
 ## API
 
-#### sorto.sort(data [, SORT_ORDER])
+#### sorto.sort(data [, sortOrder])
 Sort data as per the specified order.
  - Suppports deep sorting for object keys.
 
-#### SORT_ORDER
-| SORT_ORDER | Type | Value | Description |
+#### sortOrder
+| sortOrder | Type | Value | Description |
 |-----------------|----------|----------|--------------------------------------------|
-| **SORT_ASC** `(default)` | `string` | 'asc' | Sort in ascending order |
-| **SORT_DESC** | `string` | 'desc' | Sort in descending order |
-| **SORT_LENGTH** | `string` | 'length' | Sort in ascending order by length |
-| **SORT_LENGTH_REVERSE** | `string` | 'length_reverse' | Sort in descending order by length |
+| **sortOrder.ASC** `(default)` | `string` | 'asc' | Sort in ascending order |
+| **sortOrder.DESC** | `string` | 'desc' | Sort in descending order |
+| **sortOrder.LENGTH** | `string` | 'length' | Sort in ascending order by length |
+| **sortOrder.LENGTH_REVERSE** | `string` | 'length_reverse' | Sort in descending order by length |
 
 ## Example
 
 #### Sort keys of an object
 ```js
-  import { sort, SORT_ASC } from 'sort-o';
+  import { sort, sortOrder } from 'sort-o';
 
   const input = {
     a: 1,
@@ -67,7 +67,7 @@ Sort data as per the specified order.
     b: 2
   };
 
-  sort(input, SORT_ASC);
+  sort(input, sortOrder.ASC);
 
   // => {
   //      a: 1,
@@ -82,7 +82,7 @@ Sort data as per the specified order.
 
 #### Sort array of string
 ```js
-  import {sort, SORT_LENGTH} from 'sort-o';
+  import {sort, sortOrder} from 'sort-o';
 
   const input = [
     'dddd',
@@ -91,7 +91,7 @@ Sort data as per the specified order.
     'a'
   ];
 
-  sort(input, SORT_LENGTH);
+  sort(input, sortOrder.LENGTH);
   
   // => [
   //      'a',
