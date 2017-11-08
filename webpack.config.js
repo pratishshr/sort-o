@@ -3,8 +3,8 @@ var path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'sorto.js',
-    library: 'sorto'
+    path: path.resolve(__dirname, 'build'),
+    filename: 'sort-o.js',
+    library: 'sort-o'
   }
 };

@@ -1,3 +1,3 @@
-import { sort } from 'sorto';
+import { sort } from './sorto';
 
 export { sort };
