@@ -1,4 +1,4 @@
 import { sort } from './sorto';
-import * as sortType from './constants/sortType';
+import * as sortOrder from './constants/sortOrder';
 
-export { sort, sortType };
+export { sort, sortOrder };

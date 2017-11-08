@@ -1,7 +1,7 @@
 import { isObject } from './utils/object';
 import { ascendingSort, descendingSort, lengthSort, lengthReverseSort } from './utils/comparators';
 
-import { ASC, DESC, LENGTH, LENGTH_REVERSE } from './constants/sortType';
+import { ASC, DESC, LENGTH, LENGTH_REVERSE } from './constants/sortOrder';
 
 /**
  * Returns appropriate comparator as per the sort string.
