@@ -61,7 +61,7 @@ var sort-o =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,10 +70,17 @@ var sort-o =
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sorto__ = __webpack_require__(1);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "sort", function() { return __WEBPACK_IMPORTED_MODULE_0__sorto__["a"]; });
+const ASC = 'asc';
+/* harmony export (immutable) */ __webpack_exports__["ASC"] = ASC;
 
+const DESC = 'desc';
+/* harmony export (immutable) */ __webpack_exports__["DESC"] = DESC;
 
+const LENGTH = 'length';
+/* harmony export (immutable) */ __webpack_exports__["LENGTH"] = LENGTH;
+
+const LENGTH_REVERSE = 'length_reverse';
+/* harmony export (immutable) */ __webpack_exports__["LENGTH_REVERSE"] = LENGTH_REVERSE;
 
 
 
@@ -82,23 +89,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sorto__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants_sortOrder__ = __webpack_require__(0);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "sort", function() { return __WEBPACK_IMPORTED_MODULE_0__sorto__["a"]; });
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "sortOrder", function() { return __WEBPACK_IMPORTED_MODULE_1__constants_sortOrder__; });
+
+
+
+
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = sort;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_object__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_comparators__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_object__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_comparators__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__ = __webpack_require__(0);
 
 
 
-const SORT_ASC = 'asc';
-/* unused harmony export SORT_ASC */
-
-const SORT_DESC = 'desc';
-/* unused harmony export SORT_DESC */
-
-const SORT_LENGTH = 'length';
-/* unused harmony export SORT_LENGTH */
-
-const SORT_LENGTH_REVERSE = 'length_reverse';
-/* unused harmony export SORT_LENGTH_REVERSE */
 
 
 /**
@@ -114,10 +127,10 @@ function getComparator(sortOrder) {
   }
 
   const comparators = {
-    [SORT_ASC]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["a" /* ascendingSort */],
-    [SORT_DESC]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["b" /* descendingSort */],
-    [SORT_LENGTH]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["d" /* lengthSort */],
-    [SORT_LENGTH_REVERSE]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["c" /* lengthReverseSort */]
+    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["a" /* ascendingSort */],
+    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["DESC"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["b" /* descendingSort */],
+    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["LENGTH"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["d" /* lengthSort */],
+    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["LENGTH_REVERSE"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["c" /* lengthReverseSort */]
   };
 
   return comparators[sortOrder];
@@ -162,7 +175,7 @@ function sortArray(data, comparator) {
  * @param {Object|Array} data 
  * @param {String|Function} = 'asc' sortOrder 
  */
-function sort(data, sortOrder = SORT_ASC) {
+function sort(data, sortOrder = __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]) {
   const comparator = getComparator(sortOrder);
 
   if (Object(__WEBPACK_IMPORTED_MODULE_0__utils_object__["a" /* isObject */])(data)) {
@@ -178,7 +191,7 @@ function sort(data, sortOrder = SORT_ASC) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -194,7 +207,7 @@ function isObject(input) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
