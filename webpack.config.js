@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'sorto.js',
-    library: 'sorto'
+    library: 'sorto',
+    libraryTarget: 'umd'
   }
 };
