@@ -84,7 +84,7 @@ Sort data as per the specified order.
 
 #### Sort array of strings.
 ```js
-  import {sort, sortOrder} from 'sort-o';
+  import { sort, sortOrder } from 'sort-o';
 
   const input = [
     'dddd',
