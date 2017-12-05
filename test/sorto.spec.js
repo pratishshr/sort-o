@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import { isObject } from '../src/utils/object';
-import { sort, sortOrder } from '../src';
+import { sort, sortKeys, sortOrder } from '../src';
 
 /**
  * Traverse object to get the concatenated keys.
@@ -32,42 +32,42 @@ describe('sorto', function() {
       let input = { a: 1, c: 3, d: 4, b: 2 };
       let sortedOutput = { a: 1, b: 2, c: 3, d: 4 };
 
-      expect(getDeepKeys(sort(input, sortOrder.ASC))).to.have.ordered.members(getDeepKeys(sortedOutput));
+      expect(getDeepKeys(sortKeys(input, sortOrder.ASC))).to.have.ordered.members(getDeepKeys(sortedOutput));
     });
 
     it('should sort keys in descending order when order = "desc".', () => {
       let input = { a: 1, c: 3, d: 4, b: 2 };
       let sortedOutput = { d: 1, c: 2, b: 3, a: 4 };
 
-      expect(getDeepKeys(sort(input, sortOrder.DESC))).to.have.ordered.members(getDeepKeys(sortedOutput));
+      expect(getDeepKeys(sortKeys(input, sortOrder.DESC))).to.have.ordered.members(getDeepKeys(sortedOutput));
     });
 
     it('should sort keys in ascending order by default when an order is not defined.', () => {
       let input = { a: 1, c: 3, d: 4, b: 2 };
       let sortedOutput = { a: 1, b: 2, c: 3, d: 4 };
 
-      expect(getDeepKeys(sort(input))).to.have.ordered.members(getDeepKeys(sortedOutput));
+      expect(getDeepKeys(sortKeys(input))).to.have.ordered.members(getDeepKeys(sortedOutput));
     });
 
     it('should perform a deep sort in ascending order when order = "asc"', () => {
       let input = { a: 1, c: { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2 } } }, b: 2 };
       let sortedOutput = { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2 } } } };
 
-      expect(getDeepKeys(sort(input, sortOrder.ASC))).to.have.ordered.members(getDeepKeys(sortedOutput));
+      expect(getDeepKeys(sortKeys(input, sortOrder.ASC))).to.have.ordered.members(getDeepKeys(sortedOutput));
     });
 
     it('should perform a deep sort in descending order when order = "desc" ', () => {
       let input = { a: 1, c: { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2 } } }, b: 2 };
       let sortedOutput = { c: { c: { c: { b: 2, a: 1 }, b: 2, a: 1 }, b: 2, a: 1 }, b: 2, a: 1 };
 
-      expect(getDeepKeys(sort(input, sortOrder.DESC))).to.have.ordered.members(getDeepKeys(sortedOutput));
+      expect(getDeepKeys(sortKeys(input, sortOrder.DESC))).to.have.ordered.members(getDeepKeys(sortedOutput));
     });
 
     it('should perform a deep sort in ascending order by default when an order is not defined.', () => {
       let input = { a: 1, c: { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2 } } }, b: 2 };
       let sortedOutput = { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2, c: { a: 1, b: 2 } } } };
 
-      expect(getDeepKeys(sort(input))).to.have.ordered.members(getDeepKeys(sortedOutput));
+      expect(getDeepKeys(sortKeys(input))).to.have.ordered.members(getDeepKeys(sortedOutput));
     });
 
     it('should sort array in ascending order.', () => {

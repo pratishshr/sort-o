@@ -26,57 +26,46 @@ function getComparator(sortOrder) {
 }
 
 /**
- * Deep sort object keys as per the given comparator
+ * Sort an array as per the specified order.
+ *
+ * @param {Array} data
+ * @param {String|Function} = 'asc' sortOrder
+ * @returns {Array}
+ */
+export function sort(data, sortOrder = ASC) {
+  if (!Array.isArray(data)) {
+    throw new Error('Supplied data is not a valid Array');
+  }
+
+  const comparator = getComparator(sortOrder);
+
+  return data.sort(comparator);
+}
+
+/**
+ * Sort keys of an object as per the specified order.
  *
  * @param {Object} data
- * @param {Function} comparator
+ * @param {String|Function} = 'asc' sortOrder
  * @returns {Object}
  */
-function sortObject(data, comparator) {
+export function sortKeys(data, sortOrder = ASC) {
+  if (!isObject(data)) {
+    throw new Error('Supplied data is not a valid Object');
+  }
+
+  const comparator = getComparator(sortOrder);
+
   let sortedData = {};
   let sortedKeys = Object.keys(data).sort(comparator);
 
   sortedKeys.forEach(key => {
     if (isObject(data[key])) {
-      sortedData[key] = sortObject(data[key], comparator);
+      sortedData[key] = sortKeys(data[key], comparator);
     } else {
       sortedData[key] = data[key];
     }
   });
 
   return sortedData;
-}
-
-/**
- * Sort an array as per the given comparator
- *
- * @param {Array} data
- * @param {Function} comparator
- * @returns {Array}
- */
-function sortArray(data, comparator) {
-  let sortedData = {};
-
-  return data.sort(comparator);
-}
-
-/**
- * Sort data as per the specified order.
- *
- * @param {Object|Array} data
- * @param {String|Function} = 'asc' sortOrder
- * @returns {Object|Array}
- */
-export function sort(data, sortOrder = ASC) {
-  const comparator = getComparator(sortOrder);
-
-  if (isObject(data)) {
-    return sortObject(data, comparator);
-  }
-
-  if (Array.isArray(data)) {
-    return sortArray(data, comparator);
-  }
-
-  throw new Error('Supplied data is not a valid Object');
 }

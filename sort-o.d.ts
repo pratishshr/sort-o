@@ -6,6 +6,7 @@ declare module 'sort-o' {
     LENGTH_REVERSE: string;
   };
 
-  export function sort(data: Array<T> | object, sortOrder: SortOrder[keyof SortOrder] | Function): Array<T> | object;
+  export function sort<T>(data: Array<T> | Object, sortOrder: SortOrder[keyof SortOrder] | Function): Array<T>;
+  export function sortKeys(data: Object, sortOrder: SortOrder[keyof SortOrder] | Function): Object;
   export const sortOrder: SortOrder;
 }
