@@ -85,11 +85,11 @@ const ASC = 'asc';
 const DESC = 'desc';
 /* harmony export (immutable) */ __webpack_exports__["DESC"] = DESC;
 
-const LENGTH = 'length';
-/* harmony export (immutable) */ __webpack_exports__["LENGTH"] = LENGTH;
+const ASC_LENGTH = 'asc_length';
+/* harmony export (immutable) */ __webpack_exports__["ASC_LENGTH"] = ASC_LENGTH;
 
-const LENGTH_REVERSE = 'length_reverse';
-/* harmony export (immutable) */ __webpack_exports__["LENGTH_REVERSE"] = LENGTH_REVERSE;
+const DESC_LENGTH = 'desc_length';
+/* harmony export (immutable) */ __webpack_exports__["DESC_LENGTH"] = DESC_LENGTH;
 
 
 
@@ -140,8 +140,8 @@ function getComparator(sortOrder) {
   const comparators = {
     [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["a" /* ascendingSort */],
     [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["DESC"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["b" /* descendingSort */],
-    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["LENGTH"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["d" /* lengthSort */],
-    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["LENGTH_REVERSE"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["c" /* lengthReverseSort */]
+    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC_LENGTH"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["d" /* lengthSort */],
+    [__WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["DESC_LENGTH"]]: __WEBPACK_IMPORTED_MODULE_1__utils_comparators__["c" /* lengthReverseSort */]
   };
 
   return comparators[sortOrder];

@@ -2,8 +2,8 @@ declare module 'sort-o' {
   export type SortOrder = {
     ASC: string;
     DESC: string;
-    LENGTH: string;
-    LENGTH_REVERSE: string;
+    ASC_LENGTH: string;
+    DESC_LENGTH: string;
   };
 
   export function sort<T>(data: Array<T> | Object, sortOrder: SortOrder[keyof SortOrder] | Function): Array<T>;
