@@ -30,6 +30,7 @@ function getComparator(sortOrder) {
  *
  * @param {Object} data
  * @param {Function} comparator
+ * @returns {Object}
  */
 function sortObject(data, comparator) {
   let sortedData = {};
@@ -51,6 +52,7 @@ function sortObject(data, comparator) {
  *
  * @param {Array} data
  * @param {Function} comparator
+ * @returns {Array}
  */
 function sortArray(data, comparator) {
   let sortedData = {};
@@ -63,6 +65,7 @@ function sortArray(data, comparator) {
  *
  * @param {Object|Array} data
  * @param {String|Function} = 'asc' sortOrder
+ * @returns {Object|Array}
  */
 export function sort(data, sortOrder = ASC) {
   const comparator = getComparator(sortOrder);
