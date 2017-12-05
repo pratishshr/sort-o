@@ -102,6 +102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sorto__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants_sortOrder__ = __webpack_require__(0);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "sort", function() { return __WEBPACK_IMPORTED_MODULE_0__sorto__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "sortKeys", function() { return __WEBPACK_IMPORTED_MODULE_0__sorto__["b"]; });
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "sortOrder", function() { return __WEBPACK_IMPORTED_MODULE_1__constants_sortOrder__; });
 
 
@@ -115,6 +116,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = sort;
+/* harmony export (immutable) */ __webpack_exports__["b"] = sortKeys;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_object__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_comparators__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__ = __webpack_require__(0);
@@ -146,59 +148,48 @@ function getComparator(sortOrder) {
 }
 
 /**
- * Deep sort object keys as per the given comparator
+ * Sort an array as per the specified order.
+ *
+ * @param {Array} data
+ * @param {String|Function} = 'asc' sortOrder
+ * @returns {Array}
+ */
+function sort(data, sortOrder = __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]) {
+  if (!Array.isArray(data)) {
+    throw new Error('Supplied data is not a valid Array');
+  }
+
+  const comparator = getComparator(sortOrder);
+
+  return data.sort(comparator);
+}
+
+/**
+ * Sort keys of an object as per the specified order.
  *
  * @param {Object} data
- * @param {Function} comparator
+ * @param {String|Function} = 'asc' sortOrder
  * @returns {Object}
  */
-function sortObject(data, comparator) {
+function sortKeys(data, sortOrder = __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]) {
+  if (!Object(__WEBPACK_IMPORTED_MODULE_0__utils_object__["a" /* isObject */])(data)) {
+    throw new Error('Supplied data is not a valid Object');
+  }
+
+  const comparator = getComparator(sortOrder);
+
   let sortedData = {};
   let sortedKeys = Object.keys(data).sort(comparator);
 
   sortedKeys.forEach(key => {
     if (Object(__WEBPACK_IMPORTED_MODULE_0__utils_object__["a" /* isObject */])(data[key])) {
-      sortedData[key] = sortObject(data[key], comparator);
+      sortedData[key] = sortKeys(data[key], comparator);
     } else {
       sortedData[key] = data[key];
     }
   });
 
   return sortedData;
-}
-
-/**
- * Sort an array as per the given comparator
- *
- * @param {Array} data
- * @param {Function} comparator
- * @returns {Array}
- */
-function sortArray(data, comparator) {
-  let sortedData = {};
-
-  return data.sort(comparator);
-}
-
-/**
- * Sort data as per the specified order.
- *
- * @param {Object|Array} data
- * @param {String|Function} = 'asc' sortOrder
- * @returns {Object|Array}
- */
-function sort(data, sortOrder = __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]) {
-  const comparator = getComparator(sortOrder);
-
-  if (Object(__WEBPACK_IMPORTED_MODULE_0__utils_object__["a" /* isObject */])(data)) {
-    return sortObject(data, comparator);
-  }
-
-  if (Array.isArray(data)) {
-    return sortArray(data, comparator);
-  }
-
-  throw new Error('Supplied data is not a valid Object');
 }
 
 
