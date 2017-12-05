@@ -5,11 +5,11 @@ import { sort, sortOrder } from '../src';
 
 /**
  * Traverse object to get the concatenated keys.
- * 
+ *
  * @example
  * getDeepKeys({a: {a: 1}, b: 2}) => ['a.a', 'b']
- * 
- * @param {Object} obj 
+ *
+ * @param {Object} obj
  */
 function getDeepKeys(obj) {
   let keys = [];

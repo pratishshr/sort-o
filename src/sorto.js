@@ -6,8 +6,8 @@ import { ASC, DESC, LENGTH, LENGTH_REVERSE } from './constants/sortOrder';
 /**
  * Returns appropriate comparator as per the sort string.
  * If a function is supplied, it returns the function itself.
- * 
- * @param {String|Function} sortOrder 
+ *
+ * @param {String|Function} sortOrder
  * @returns {Function}
  */
 function getComparator(sortOrder) {
@@ -27,9 +27,9 @@ function getComparator(sortOrder) {
 
 /**
  * Deep sort object keys as per the given comparator
- * 
- * @param {Object} data 
- * @param {Function} comparator 
+ *
+ * @param {Object} data
+ * @param {Function} comparator
  */
 function sortObject(data, comparator) {
   let sortedData = {};
@@ -48,9 +48,9 @@ function sortObject(data, comparator) {
 
 /**
  * Sort an array as per the given comparator
- * 
- * @param {Array} data 
- * @param {Function} comparator 
+ *
+ * @param {Array} data
+ * @param {Function} comparator
  */
 function sortArray(data, comparator) {
   let sortedData = {};
@@ -60,9 +60,9 @@ function sortArray(data, comparator) {
 
 /**
  * Sort data as per the specified order.
- * 
- * @param {Object|Array} data 
- * @param {String|Function} = 'asc' sortOrder 
+ *
+ * @param {Object|Array} data
+ * @param {String|Function} = 'asc' sortOrder
  */
 export function sort(data, sortOrder = ASC) {
   const comparator = getComparator(sortOrder);
