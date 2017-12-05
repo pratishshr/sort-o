@@ -1,6 +1,6 @@
 {
   "name": "sort-o",
-  "version": "1.7.0",
+  "version": "0.0.1",
   "description": "Sort Object Keys",
   "main": "build/sorto.js",
   "types": "sort-o.d.ts",
