@@ -50,12 +50,12 @@ Sort data as per the specified order.
 
 #### sortOrder
 
-| sortOrder                     | Type     | Value            | Description                        |
-| ----------------------------- | -------- | ---------------- | ---------------------------------- |
-| **sortOrder.ASC** `(default)` | `string` | 'asc'            | Sort in ascending order            |
-| **sortOrder.DESC**            | `string` | 'desc'           | Sort in descending order           |
-| **sortOrder.LENGTH**          | `string` | 'length'         | Sort in ascending order by length  |
-| **sortOrder.LENGTH_REVERSE**  | `string` | 'length_reverse' | Sort in descending order by length |
+| sortOrder                     | Type     | Value         | Description                        |
+| ----------------------------- | -------- | ------------- | ---------------------------------- |
+| **sortOrder.ASC** `(default)` | `string` | 'asc'         | Sort in ascending order            |
+| **sortOrder.DESC**            | `string` | 'desc'        | Sort in descending order           |
+| **sortOrder.ASC_LENGTH**      | `string` | 'asc_length'  | Sort in ascending order by length  |
+| **sortOrder.DESC_LENGTH**     | `string` | 'desc_length' | Sort in descending order by length |
 
 ## Example
 

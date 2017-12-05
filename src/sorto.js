@@ -1,7 +1,7 @@
 import { isObject } from './utils/object';
 import { ascendingSort, descendingSort, lengthSort, lengthReverseSort } from './utils/comparators';
 
-import { ASC, DESC, LENGTH, LENGTH_REVERSE } from './constants/sortOrder';
+import { ASC, DESC, ASC_LENGTH, DESC_LENGTH } from './constants/sortOrder';
 
 /**
  * Returns appropriate comparator as per the sort string.
@@ -18,8 +18,8 @@ function getComparator(sortOrder) {
   const comparators = {
     [ASC]: ascendingSort,
     [DESC]: descendingSort,
-    [LENGTH]: lengthSort,
-    [LENGTH_REVERSE]: lengthReverseSort
+    [ASC_LENGTH]: lengthSort,
+    [DESC_LENGTH]: lengthReverseSort
   };
 
   return comparators[sortOrder];

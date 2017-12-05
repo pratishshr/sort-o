@@ -95,14 +95,14 @@ describe('sorto', function() {
       let input = ['bb', 'dddd', 'a', 'ccc'];
       let sortedOutput = ['a', 'bb', 'ccc', 'dddd'];
 
-      expect(sort(input, sortOrder.LENGTH)).to.have.ordered.members(sortedOutput);
+      expect(sort(input, sortOrder.ASC_LENGTH)).to.have.ordered.members(sortedOutput);
     });
 
     it('should sort array by length in descending when an order = "length_reverse"', () => {
       let input = ['bb', 'dddd', 'a', 'ccc'];
       let sortedOutput = ['dddd', 'ccc', 'bb', 'a'];
 
-      expect(sort(input, sortOrder.LENGTH_REVERSE)).to.have.ordered.members(sortedOutput);
+      expect(sort(input, sortOrder.DESC_LENGTH)).to.have.ordered.members(sortedOutput);
     });
 
     it('should sort data as per the comparator supplied', () => {
