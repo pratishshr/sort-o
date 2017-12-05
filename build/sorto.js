@@ -126,8 +126,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /**
  * Returns appropriate comparator as per the sort string.
  * If a function is supplied, it returns the function itself.
- * 
- * @param {String|Function} sortOrder 
+ *
+ * @param {String|Function} sortOrder
  * @returns {Function}
  */
 function getComparator(sortOrder) {
@@ -147,9 +147,10 @@ function getComparator(sortOrder) {
 
 /**
  * Deep sort object keys as per the given comparator
- * 
- * @param {Object} data 
- * @param {Function} comparator 
+ *
+ * @param {Object} data
+ * @param {Function} comparator
+ * @returns {Object}
  */
 function sortObject(data, comparator) {
   let sortedData = {};
@@ -168,9 +169,10 @@ function sortObject(data, comparator) {
 
 /**
  * Sort an array as per the given comparator
- * 
- * @param {Array} data 
- * @param {Function} comparator 
+ *
+ * @param {Array} data
+ * @param {Function} comparator
+ * @returns {Array}
  */
 function sortArray(data, comparator) {
   let sortedData = {};
@@ -180,9 +182,10 @@ function sortArray(data, comparator) {
 
 /**
  * Sort data as per the specified order.
- * 
- * @param {Object|Array} data 
- * @param {String|Function} = 'asc' sortOrder 
+ *
+ * @param {Object|Array} data
+ * @param {String|Function} = 'asc' sortOrder
+ * @returns {Object|Array}
  */
 function sort(data, sortOrder = __WEBPACK_IMPORTED_MODULE_2__constants_sortOrder__["ASC"]) {
   const comparator = getComparator(sortOrder);
@@ -226,11 +229,18 @@ function isObject(input) {
 /* harmony export (immutable) */ __webpack_exports__["c"] = lengthReverseSort;
 /**
  * Sort in ascending order.
- * 
- * @param {String|Number} a 
- * @param {String|Number} b 
+ *
+ * @param {String|Number} a
+ * @param {String|Number} b
  */
 function ascendingSort(a, b) {
+  if (typeof a === 'string') {
+    a = a.toLowerCase();
+  }
+  if (typeof b === 'string') {
+    b = b.toLowerCase();
+  }
+
   if (a < b) {
     return -1;
   }
@@ -243,11 +253,18 @@ function ascendingSort(a, b) {
 
 /**
  * Sort in descending order.
- * 
- * @param {String|Number} a 
- * @param {String|Number} b 
+ *
+ * @param {String|Number} a
+ * @param {String|Number} b
  */
 function descendingSort(a, b) {
+  if (typeof a === 'string') {
+    a = a.toLowerCase();
+  }
+  if (typeof b === 'string') {
+    b = b.toLowerCase();
+  }
+
   if (a < b) {
     return 1;
   }
@@ -260,36 +277,22 @@ function descendingSort(a, b) {
 
 /**
  * Sort in ascending order by length.
- * 
- * @param {String|Number} a 
- * @param {String|Number} b 
+ *
+ * @param {String|Number} a
+ * @param {String|Number} b
  */
 function lengthSort(a, b) {
-  if (a.length < b.length) {
-    return -1;
-  }
-  if (a.length > b.length) {
-    return 1;
-  }
-
-  return 0;
+  return a.length - b.length;
 }
 
 /**
  * Sort in ascending order by length.
- * 
- * @param {String|Number} a 
- * @param {String|Number} b 
+ *
+ * @param {String|Number} a
+ * @param {String|Number} b
  */
 function lengthReverseSort(a, b) {
-  if (a.length < b.length) {
-    return 1;
-  }
-  if (a.length > b.length) {
-    return -1;
-  }
-
-  return 0;
+  return b.length - a.length;
 }
 
 
